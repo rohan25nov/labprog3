@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Program 3</title>
+    <style>
+        .popup1 {
+            position: fixed;
+            top: -500%;
+            width: 30%;
+            margin-left: 35%;
+            border: 1px solid black;
+            border-radius: 10px;
+            -webkit-box-shadow: 10px 10px 22px -6px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 22px -6px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 22px -6px rgba(0,0,0,0.75);
+            z-index: 10;
+        }
+        #overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(200,200,200,0.7);
+            z-index: 5;
+            display: none;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="include/bootstrap.min.css">
+    <script src="include/jquery.min.js"></script>
+    <script>
+
+            function showLogin() {
+                $('#overlay').show();
+                $('.popup1').animate({top:"10%"},300);
+            }
+
+            function close() {
+
+                $('.popup1').animate({top:"-500%"},300);
+                $('#overlay').hide();
+            }
+
+
+    </script>
+</head>
+<body >
+    <div id="overlay" onclick="close()"></div>
+    <div class="popup1 mypopup text-left">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <h2>USER LOGIN</h2>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Username :</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Password :</label>
+                    <input type="password" class="form-control">
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary">LOGIN</button>
+                    <button type="button" onclick="close()" class="btn btn-danger">cancel</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <h1>program to Increase / Decrease font size</h1>
+    <h2 style="font-size: 50px">St. Joseph Engg Coll</h2>
+    <button style="padding: 20px" onclick="showLogin()" class="btn btn-success">Login to SJEC</button>
+</body>
+</html>
